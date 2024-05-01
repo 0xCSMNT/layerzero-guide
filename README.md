@@ -1,66 +1,31 @@
-## Foundry
+## LayerZero in Pure Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+**Build using the guide provided by LayerZero Team**
 
-Foundry consists of:
+[Guide](https://gist.github.com/DanL0/7eb57319646e4b1f3176d7723f84226e)
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+### Dependencies
 
-## Documentation
+LayerZero-Labs/LayerZero-v2
+LayerZero-Labs/LayerZero
+OpenZeppelin/openzeppelin-contracts (delete this and use OZ v4 for Testhelper)
+GNSPS/solidity-bytes-utils
+OpenZeppelin/openzeppelin-contracts@v4.9.6
+OpenZeppelin/openzeppelin-contracts-upgradeable@v4.9.6
+wighawag/hardhat-deploy
 
-https://book.getfoundry.sh/
+### Remappings
 
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```
+@layerzerolabs/lz-evm-oapp-v2/=lib/LayerZero-v2/oapp/
+@layerzerolabs/lz-evm-protocol-v2/=lib/LayerZero-v2/protocol/
+@layerzerolabs/lz-evm-messagelib-v2/=lib/LayerZero-v2/messagelib/
+@layerzerolabs/lz-evm-v1-0.7/=lib/LayerZero/
+@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/
+@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/
+solidity-bytes-utils/=lib/solidity-bytes-utils/
 ```
 
-### Test
 
-```shell
-$ forge test
-```
 
-### Format
 
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
